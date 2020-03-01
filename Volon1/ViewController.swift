@@ -7,29 +7,42 @@
 //
 
 import UIKit
-import Firebase
-
+import FirebaseDatabase
+//class ViewController: UIViewController {
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        // Do any additional setup after loading the view.
+//    }
+//
+//
+//}
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let ref = Database.database().reference()
     }
+//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+//                print("did not work")
+//                return             }
 
+//            let events = snapshot.reversed().compactMap(Event.init)
+//            print(events[0].title)
+//        ref.child("events").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+//          // Get user value
+//          let value = snapshot.value as? NSDictionary
+//          let username = value?["username"] as? String ?? ""
+//          let user = User(username: username)
+//
+//          // ...
+//          }) { (error) in
+//            print(error.localizedDescription)
+//        }
+//            }
+//        )
+//    }
 
 }
-
-
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-  var window: UIWindow?
-
-  func application(_ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions:
-      [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    FirebaseApp.configure()
-    return true
-  }
-}
-
